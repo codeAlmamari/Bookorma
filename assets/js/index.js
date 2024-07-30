@@ -5,6 +5,9 @@ let input = document.querySelector(".hola");
 let addbtn = document.querySelector("button");
 let unorder = document.querySelector("ul");
 
+let search = document.querySelector("#search-books input");
+let books = document.querySelectorAll("#book-list li");
+
 let delspn = document.querySelectorAll(".delete");
 let cheko = document.querySelector("#hide");
 
@@ -46,43 +49,50 @@ addbtn.addEventListener("click" , function(e){
 
 })
 
+//deletion of list items from an unordered list (<ul>)
+// -- when a delete button is clicked.
 unorder.addEventListener("click" , function(e){
+    // Cheking if the target (<ul>) has a child with class name == "delet" exist.
     if(e.target.className == "delete"){
-
+        // Here we spicify the parent and put it in var.
         listparent = e.target.parentElement;
-
+        // Remove the (parent element witch here <li>) of the target <ul>.
         unorder.removeChild(listparent)
 
     }
 })
 
+// creating an event listener for the checkBox
+// to hide the <ul> 
 cheko.addEventListener("change" , function(e){
+    // ckeking if the ckeckbox is true then
     if(cheko.checked){
+        // hide the unordered list.
         unorder.style.display = "none";
     }
     else{
+        // show the unordered list.
         unorder.style.display = "block";
     }
 })
 
 
-cheko.addEventListener("change", function(e) {
-    if(cheko.checked){
-        unorder.style.display = "none";
-    } else {
-        unorder.style.display = "block";
-    }
-});
-
 // Search functionality
-document.querySelector("#search-books input").addEventListener("keyup", function(e) {
+search.addEventListener("keyup", function(e) {
+
+    // Get the value of the search input
     let query = e.target.value.toLowerCase();
-    let books = document.querySelectorAll("#book-list li");
+    
+    // loops through each book list item in the <li> using foreach()
     books.forEach(function(book) {
+        // this line to get the text content from the class (name) from the <li> and convert it to lower case.
         let title = book.querySelector(".name").textContent.toLowerCase();
+        // check if any content of <li> contain char from search bar
         if (title.includes(query)) {
+            // if the char in search bar then show the list
             book.style.display = "block";
         } else {
+            // if not then display.
             book.style.display = "none";
         }
     });
