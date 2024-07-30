@@ -1,10 +1,8 @@
-// let delbtn = document.querySelector() 
+
+
 let addform = document.querySelector("#add-book");
-// console.log(addform)
-let input = document.querySelector(".hola");
-// console.log(input)
-let addbtn = document.querySelector("button")
-// console.log(addbtn)
+let input = document.querySelector("hola");
+let addbtn = document.querySelector("button");
 let unorder = document.querySelector("ul");
 
 let delspn = document.querySelectorAll(".delete");
@@ -42,23 +40,8 @@ addbtn.addEventListener("click" , function(e){
     input.value = ""
     
 
-})
-//delete functionalities
+});
 
-// for (let i = 0; i < delspn.length; i++) {
-
-//    delspn[i].addEventListener("click" , function(e){
-
-//     // console.log(delspn[i].parentElement);
-
-//     let prntli = delspn[i].parentElement;
-
-//     unorder.removeChild(prntli);
-
-//    })
-    
-// }
-// let item =  document.querySelector("ul");
 unorder.addEventListener("click" , function(e){
     if(e.target.className == "delete"){
 
