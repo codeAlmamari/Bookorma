@@ -11,12 +11,8 @@ This is a simple web application that allows users to add and remove books from 
 ## Project Structure
 
 Book/
-│
+
 ├── index.html # The main HTML file
-├── assets/
-│ ├── css/
-│ │ └── style.css # The main CSS file
-│ └── js/
-│ └── index.js # The main JavaScript file
+assets/css (style.css # The main CSS file)/js (index.js # The main JavaScript file)
 
 
